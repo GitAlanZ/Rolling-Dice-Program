@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Dice Program</title>
+    <script>
+        function display()
+        {
+            num1Output.innerHTML = num1;
+            num2Output.innerHTML = num2;
+            sumOutput.innerHTML = total;
+        }
+        function initilize()
+        {
+            num1Output = document.getElementById("dice1");
+            num2Output = document.getElementById("dice2");
+            sumOutput = document.getElementById("total");
+            num1 = 0;
+            num2 = 0;
+            total = 0;
+            display();
+        }
+        function roll()
+        {
+            num1 = Math.floor((Math.random() * 6)+1);
+            num2 = Math.floor((Math.random() * 6)+1);
+            total = num1 + num2;
+            display();
+        }
+    </script>
+</head>
+<body onload="initilize();">
+    <h1>Dice 1:</h1>
+    <h2 id="dice1"></h2>
+    <h1>Dice 2:</h1>
+    <h2 id="dice2"></h2>
+    <h1>Total:</h1>
+    <h2 id="total"></h2>
+    <button onclick="roll()">Click to Roll</button>
+</body>
+</html>
